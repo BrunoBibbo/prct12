@@ -1,5 +1,3 @@
-require "./lib/Matriz/Matriz.rb"
-require "./lib/Matriz/Matriz_Densa.rb"
 #Clase Matriz_Dispersa para la representacion de la Matriz dispersa, hereda de la clase Matrix.
 class Matriz_Dispersa < Matrix
   #alt=alto   anc= ancho n_elem= numero de elementos alto=posicion alto ancho=posicion ancho elem=elemento

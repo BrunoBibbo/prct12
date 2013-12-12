@@ -1,10 +1,11 @@
-require "./lib/Matriz/version"
-require "./lib/Matriz/Matriz.rb"
-require "./lib/Matriz/Fraccion.rb"
-require "./lib/Matriz/Matriz_Densa.rb"
-require "./lib/Matriz/Matriz_Dispersa.rb"
-require "./lib/Matriz/Matriz_DSL.rb"
-  
+require 'Matriz/version'
+
 module Matriz
-# Modulo de Matriz
+
+require 'Matriz/Matriz.rb'
+require 'Matriz/Fraccion.rb'
+require 'Matriz/Matriz_Densa.rb'
+require 'Matriz/Matriz_Dispersa.rb'
+require 'Matriz/Matriz_DSL.rb'
+  
 end

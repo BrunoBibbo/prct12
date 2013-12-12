@@ -1,4 +1,3 @@
-require "./lib/Matriz/Matriz.rb"
 # Clase Matriz_Densa que hereda de Matrix, permite crear matrices densas.
 class Matriz_Densa < Matrix
   #alt=alto  anc= ancho

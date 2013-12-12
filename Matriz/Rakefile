@@ -1,7 +1,7 @@
 $:.unshift File.dirname(__FILE__) + 'lib'
-$:.unshift './lib', './spec', './test'
+$:.unshift './lib', './spec'
 
-require "bundler/gem_tasks"
+require 'bundler/gem_tasks'
 require 'rspec/core/rake_task'
 
 RSpec::Core::RakeTask.new
@@ -11,6 +11,6 @@ task :default => :spec
 desc "Pruebas unitarias"
 
 task :test do
-        sh "ruby -I. test/Matriz_test.rb"
+        sh "ruby -I ./lib test/Matriz_test.rb"
 end
 
