@@ -129,10 +129,6 @@ end
 
 
 # Matrices con Fracciones
-
-
-
-
   describe "Operaciones con matrices densas con fracciones" do
     before :all do
       # Crear matrices
