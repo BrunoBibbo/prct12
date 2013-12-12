@@ -1,12 +1,12 @@
 class MatrizDSL
 	
-	include Enumerable
+
 	attr_accessor(:op, :operando, :tipo, :salida)
 	
 	def initialize(op, &block)
 		@op = op
 		@operando = []
-		@tipo = "densa"
+		@tipo = "dispersa"
 		@salida = ""
 
 		instance_eval &block
@@ -15,11 +15,6 @@ class MatrizDSL
 	def to_s
 		
 		s = "\n #{@op} \n"
-		s << "\n #{'=' * @op.size}\n"
-
-		op.each_with_index do |oper, i|
-			s << "#{i + 1}. #{oper}\n"
-		end
 
 		case @op
 			when "Suma" then s << " =#{(@operando[0]+@operando[1]).to_s}\n"

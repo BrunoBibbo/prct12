@@ -2,38 +2,90 @@ require 'Matriz.rb'
 
 
 #Pruebas con DSL
-
 describe MatrizDSL do
-        
-        # Etc
 
-	describe "# Representacion correcta del tipo matriz: " do
 	before :all do
 		@m1 = MatrizDSL.new("Suma"){
+			option "densa"
+			operand [[1,1],[1,1]]
+			operand [[1,1],[1,1]]
+			}
+		@m2 = MatrizDSL.new("Suma"){
+			option "dispersa"
+			operand [[1,0],[0,0]]
+			operand [[5,0],[0,0]]
+			}
+		@m3 = MatrizDSL.new("Resta"){
 			option "densa"
 			operand [[1,2],[3,4]]
 			operand [[5,6],[7,8]]
 			}
+		@m4 = MatrizDSL.new("Resta"){
+			option "dispersa"
+			operand [[2,0],[0,0]]
+			operand [[1,0],[0,0]]
+			}
+		@m5 = MatrizDSL.new("Multiplicacion"){
+			option "densa"
+			operand [[1,2],[3,4]]
+			operand [[5,6],[7,8]]
+			}
+		@m6 = MatrizDSL.new("Multiplicacion"){
+			option "dispersa"
+			operand [[2,0],[0,0]]
+			operand [[1,0],[0,0]]
+			}
 	end
+
+
+	describe "# Representacion correcta del tipo matriz: " do
 		it "Matriz densa" do
 			@m1.operando[0].class.should eq(Matriz_Densa)
 			@m1.operando[1].class.should eq(Matriz_Densa)
 		end
+		it "Matriz dispersa" do
+			@m2.operando[0].class.should eq(Matriz_Dispersa)
+			@m2.operando[1].class.should eq(Matriz_Dispersa)
+		end
+		it "Matriz densa" do
+			@m3.operando[0].class.should eq(Matriz_Densa)
+			@m3.operando[1].class.should eq(Matriz_Densa)
+		end
+		it "Matriz dispersa" do
+			@m4.operando[0].class.should eq(Matriz_Dispersa)
+			@m4.operando[1].class.should eq(Matriz_Dispersa)
+		end
+		it "Matriz densa" do
+			@m5.operando[0].class.should eq(Matriz_Densa)
+			@m5.operando[1].class.should eq(Matriz_Densa)
+		end
+		it "Matriz dispersa" do
+			@m6.operando[0].class.should eq(Matriz_Dispersa)
+			@m6.operando[1].class.should eq(Matriz_Dispersa)
+		end
 	end
-    
-    describe " # Operaciones con matrices." do
-      it " # Se deben poder sumar matrices." do
-        @m1 = MatrizDSL.new("Suma") do
-          option "densa"
-        
-          operand [[1, 1],[1, 1]]
-          operand [[1,1], [1, 1]]
-        end
-        @m1.should eq(@m1)
-  end
-end
-end
 
+	describe "# Correcto funcionamiento del to_s: " do
+		it "Suma densa" do
+			@m1.to_s.should eq( "\n Suma \n =[[2,2][2,2]]\n")		
+		end
+		it "Matriz Suma" do
+			@m2.to_s.should eq( "\n Suma \n =[[6,0][0,0]]\n")
+		end
+		it "Matriz Resta" do
+			@m3.to_s.should eq("\n Resta \n =[[-4,-4][-4,-4]]\n")
+		end
+		it "Matriz Resta" do
+			@m4.to_s.should eq( "\n Resta \n =[[1,0][0,0]]\n")
+		end
+		it "Matriz Multiplicacion" do
+			@m5.to_s.should eq( "\n Multiplicacion \n =[[19,22][43,50]]\n")
+		end
+		it "Matriz Multiplicacion" do
+			@m6.to_s.should eq("\n Multiplicacion \n =[[2,0][0,0]]\n")
+		end
+	end
+end
 
 #Matrices con enteros
 
