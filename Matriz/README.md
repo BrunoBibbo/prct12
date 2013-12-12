@@ -1,32 +1,20 @@
-# Matriz
 
-Este proyecto constará de una clase Matriz abstracta. En la cual definiremos los métodos:
+		Práctica 12:
 
-	- []
-	- []=
-	- def + (Abstracto).
-	- def - (Abstracto).
-	- def * (Abstracto).
-	- def coerce (Nos permite realizar operaciones entre estructuras de datos distintas).
+	Hecho por:
+		
+		- Bruno Alessio Bibbó.
+		- Ayoze Elvira García.
 
-# Matriz Densa
+Esta práctica consta de implementar una estructura DSL para la representación
+de matrices (tanto densas como dispersas). Se parte de la estructura de matrices que se tenía implementada en las prácticas anteriores.
 
-Esta clase hereda la estructura de la superclase Matriz. Su estructura de datos constará de un array de arrays (para poder representar el contenido de las matrices). Esta matriz debe contener, al menos, un 40% de sus elementos no nulos para considerarse densa. En ella deberemos definir los métodos que nos permitirán realizar las distintas operaciones entre matrices. Tales como:
+	- Definición de espectativas:
+		
+		se definen en el fichero "Matriz_DSL_spec.rb" las espectativas para comprobar el funcionamiento de la estructura DSL.
 
-	- []
-	- []=
-	- ==
-	- def + / - / *
-	- def to_s
-	- def máximo / mínimo
+	- Definición de la clase MatrizDSL:
 
-# Matriz Dispersa
+		Se define la clase MatrizDSL en el fichero "Matriz_DSL.rb".
 
-Esta clase hereda la estructura de la superclase Matriz. Su estructura de datos constará de un array para la posición de los elementos de una matriz no nulos y otro para almacenar dichos valores. Esta matriz debe contener más de un 60% de sus elementos nulos para considerarse dispersa. En ella deberemos definir los métodos que nos permitirán realizar las distintas operaciones entre matrices. Tales como:
-
-	- []
-	- []=
-	- ==
-	- def + / - / *
-	- def to_s
-	- def máximo / mínimo
+	- Se actualiza la versión de la gema (0.0.3).
