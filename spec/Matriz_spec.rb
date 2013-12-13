@@ -7,37 +7,42 @@ describe MatrizDSL do
 	before :all do
 		@m1 = MatrizDSL.new("Suma"){
 			option "densa"
+			option "console"
 			operand [[1,1],[1,1]]
 			operand [[1,1],[1,1]]
 			}
 		@m2 = MatrizDSL.new("Suma"){
 			option "dispersa"
+			option "file"
 			operand [[1,0],[0,0]]
 			operand [[5,0],[0,0]]
 			}
 		@m3 = MatrizDSL.new("Resta"){
 			option "densa"
+			option "console"
 			operand [[1,2],[3,4]]
 			operand [[5,6],[7,8]]
 			}
 		@m4 = MatrizDSL.new("Resta"){
 			option "dispersa"
+			option "file"
 			operand [[2,0],[0,0]]
 			operand [[1,0],[0,0]]
 			}
 		@m5 = MatrizDSL.new("Multiplicacion"){
 			option "densa"
+			option "console"
 			operand [[1,2],[3,4]]
 			operand [[5,6],[7,8]]
 			}
 		@m6 = MatrizDSL.new("Multiplicacion"){
 			option "dispersa"
+			option "console"
 			operand [[2,0],[0,0]]
 			operand [[1,0],[0,0]]
 			}
 	end
-
-
+	
 	describe "# Representacion correcta del tipo matriz: " do
 		it "Matriz densa" do
 			@m1.operando[0].class.should eq(Matriz_Densa)
@@ -69,14 +74,8 @@ describe MatrizDSL do
 		it "Suma densa" do
 			@m1.to_s.should eq( "\n Suma \n =[[2,2][2,2]]\n")		
 		end
-		it "Matriz Suma" do
-			@m2.to_s.should eq( "\n Suma \n =[[6,0][0,0]]\n")
-		end
 		it "Matriz Resta" do
 			@m3.to_s.should eq("\n Resta \n =[[-4,-4][-4,-4]]\n")
-		end
-		it "Matriz Resta" do
-			@m4.to_s.should eq( "\n Resta \n =[[1,0][0,0]]\n")
 		end
 		it "Matriz Multiplicacion" do
 			@m5.to_s.should eq( "\n Multiplicacion \n =[[19,22][43,50]]\n")

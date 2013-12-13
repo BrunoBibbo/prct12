@@ -22,8 +22,15 @@ class MatrizDSL
 			when "Multiplicacion" then s << " =#{(@operando[0]*@operando[1]).to_s}\n"
 			else output << "No se ha podido realizar la operacion"
 		end
-
-		s
+		
+		case @salida
+			when "console" then return s
+			when "file"
+				then
+					File.open('Matriz.txt', 'w') do |i|
+						i.puts s
+					end
+		end
 	end
 
 	def option(tp)
@@ -44,7 +51,7 @@ class MatrizDSL
 			when "dispersa"
 				then
 					al = opr.size
-					an = opr.size[0]
+					an = opr[0].size
 					alt = []
 					anc = []
 					e = []
@@ -55,10 +62,11 @@ class MatrizDSL
 								alt << i
 								anc << j
 								e << opr[i][j]
-								n_e + 1
+								n_e = n_e + 1
 							end
 						end
 					end
+					
 					operando << Matriz_Dispersa.new(al, an, alt, anc, e, n_e)
 		end
 	end
