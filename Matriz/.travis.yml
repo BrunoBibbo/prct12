@@ -1,6 +1,5 @@
 languaje: ruby
 rvm:
-
   - 1.9.3
   - jruby-18mode
   - jruby-19mode
