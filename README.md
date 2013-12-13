@@ -20,4 +20,4 @@ de matrices (tanto densas como dispersas). Se parte de la estructura de matrices
 	- Se actualiza la versión de la gema (0.0.3).
 
 	- Informe de gemnasium:
-	    [![Dependecy Status](https://gemnasium.com/alu0100696974/prct12.png)](https://gemnasium.com/alu0100696974/prct12)
+	 	https://gemnasium.com/alu0100696974/prct12
